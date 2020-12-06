@@ -1,19 +1,29 @@
-import logo from './logo.svg';
+// import { useEffect } from 'react';
+// import api from './api';
+import { Provider } from 'react-redux';
+import store from './store';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 function App() {
+	// useEffect(() => {
+	// 	api.getTrafficImages
+	// 		.then((response) => {
+	// 			if (response.status === 200) {
+	// 				const {
+	// 					data: { items }
+	// 				} = response;
+	// 				console.log(items);
+	// 			}
+	// 		})
+	// 		.catch((error) => {
+	// 			console.log(error);
+	// 		});
+	// }, []);
 	return (
-		<div className="App">
-			<header className="App-header">
-				<img src={logo} className="App-logo" alt="logo" />
-				<p>
-					Edit <code>src/App.js</code> and save to reload.
-				</p>
-				<a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-					Learn React
-				</a>
-			</header>
-		</div>
+		<Provider store={store}>
+			<div className="App"></div>
+		</Provider>
 	);
 }
 
