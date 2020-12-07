@@ -5,16 +5,11 @@ const Card = (props) => {
 	console.log(Header);
 	return (
 		<div className="card">
-			{/* <Card.Header></Card.Header>? null */}
 			{React.Children.map(children, (child) => {
 				return child;
 			})}
 		</div>
 	);
-};
-
-Card.defaultProps = {
-	Header: null
 };
 
 Card.Header = (props) => {
