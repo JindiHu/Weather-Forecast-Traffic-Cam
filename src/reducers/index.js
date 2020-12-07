@@ -1,6 +1,11 @@
 import { combineReducers } from 'redux';
-import trafficImagesState from './trafficImagesState';
+import { connectRouter } from 'connected-react-router';
+import trafficImages from './trafficImages';
 
-export default combineReducers({
-	trafficImagesState
-});
+const createRootReducer = (history) =>
+	combineReducers({
+		router: connectRouter(history),
+		trafficImages
+	});
+
+export default createRootReducer;

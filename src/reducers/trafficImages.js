@@ -3,7 +3,7 @@ const initialState = {
 	items: []
 };
 
-const trafficImagesState = (state = initialState, action) => {
+const trafficImages = (state = initialState, action) => {
 	const { type, payload } = action;
 
 	switch (type) {
@@ -14,4 +14,4 @@ const trafficImagesState = (state = initialState, action) => {
 	}
 };
 
-export default trafficImagesState;
+export default trafficImages;

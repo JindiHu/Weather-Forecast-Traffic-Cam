@@ -1,13 +1,17 @@
 // import { useEffect } from 'react';
-// import api from './api';
+// import agent from './agent';
 import { Provider } from 'react-redux';
-import store from './store';
+import { Route, Switch, Redirect } from 'react-router-dom';
+import { ConnectedRouter } from 'connected-react-router';
+import configureStore, { history } from './configureStore';
+import appRoutes from './routes';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
+
+const store = configureStore();
 
 function App() {
 	// useEffect(() => {
-	// 	api.getTrafficImages
+	// 	agent.TrafficImages.byDateTime
 	// 		.then((response) => {
 	// 			if (response.status === 200) {
 	// 				const {
@@ -22,7 +26,31 @@ function App() {
 	// }, []);
 	return (
 		<Provider store={store}>
-			<div className="App"></div>
+			<ConnectedRouter history={history}>
+				<Switch>
+					{appRoutes.map((route) => {
+						if (route.redirectTo) {
+							return (
+								<Redirect
+									from={route.path}
+									exact={route.exact}
+									to={route.redirectTo}
+									key={route.name}
+								/>
+							);
+						} else {
+							return (
+								<Route
+									path={route.path}
+									exact={route.exact}
+									component={route.component}
+									key={route.name}
+								/>
+							);
+						}
+					})}
+				</Switch>
+			</ConnectedRouter>
 		</Provider>
 	);
 }
