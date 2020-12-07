@@ -1,5 +1,5 @@
-import Main from '../components/Main';
+import App from '../layouts/App';
 
-const appRoutes = [{ name: 'main', path: '/', exact: true, component: Main }];
+const rootRoutes = [{ name: 'app', path: '/', exact: true, component: App }];
 
-export default appRoutes;
+export default rootRoutes;

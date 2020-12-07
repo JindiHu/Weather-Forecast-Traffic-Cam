@@ -6,11 +6,14 @@ const axiosInstance = axios.create({
 });
 
 const TrafficImages = {
-	byDateTime: axiosInstance.get(config.apiEndpoints.url.trafficImages)
+	getByDateTime: axiosInstance.get(config.apiEndpoints.url.trafficImages)
+};
+const WeatherForecase = {
+	getTwoHour: axiosInstance.get(config.apiEndpoints.url.weatherForecast.twoHour),
+	getTwentyFourHour: axiosInstance.get(config.apiEndpoints.url.weatherForecast.twentyFourHour),
+	getFourDay: axiosInstance.get(config.apiEndpoints.url.weatherForecast.fourDay)
 };
 
-// const We
-
-const agent = { TrafficImages };
+const agent = { TrafficImages, WeatherForecase };
 
 export default agent;
