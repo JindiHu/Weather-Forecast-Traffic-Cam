@@ -4,30 +4,17 @@ export const isTouchDevice = () => {
 	return 'ontouchstart' in window || navigator.MaxTouchPoints > 0 || navigator.msMaxTouchPoints > 0;
 };
 
-export const reverseGeocoding = ({ unknownGeocode, geoLocations }) => {
-	let shortest = null;
-	let nearestLocation = null;
-	geoLocations.forEach((item, key) => {
-		const { label_location } = item;
-		const dLat = Math.pow(label_location.latitude - unknownGeocode.latitude, 2);
-		const dLong = Math.pow(label_location.longitude - unknownGeocode.longitude, 2);
-		if (shortest !== null) {
-			if (dLat + dLong < shortest) {
-				shortest = dLat + dLong;
-				nearestLocation = { ...item, key };
-			}
-		} else {
-			shortest = dLat + dLong;
-			nearestLocation = { ...item, key };
-		}
-	});
-	return nearestLocation;
+export const getDistance = (p1, p2) => {
+	return Math.sqrt(Math.pow(p1.latitude - p2.latitude, 2) + Math.pow(p1.longitude - p2.longitude, 2));
 };
 
-reverseGeocoding.propTypes = {
-	unknownGeocode: PropTypes.shape({
+getDistance.propTypes = {
+	p1: PropTypes.shape({
 		latitude: PropTypes.number,
 		longitude: PropTypes.number
-	}).isRequired,
-	geoLocations: PropTypes.array.isRequired
+	}),
+	p2: PropTypes.shape({
+		latitude: PropTypes.number,
+		longitude: PropTypes.number
+	})
 };

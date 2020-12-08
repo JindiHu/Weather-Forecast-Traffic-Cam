@@ -60,6 +60,7 @@ const App = (props) => {
 		</div>
 	);
 };
+
 const mapStateToProps = (state) => ({
 	appState: state.app
 });

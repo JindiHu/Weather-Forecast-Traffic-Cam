@@ -1,8 +1,7 @@
 import React from 'react';
 
 const Card = (props) => {
-	const { children, Header } = props;
-	console.log(Header);
+	const { children } = props;
 	return (
 		<div className="card">
 			{React.Children.map(children, (child) => {
@@ -33,27 +32,5 @@ Card.Body = (props) => {
 		</div>
 	);
 };
-
-// Card.ListGroup = (props) => {
-// 	const { children } = props;
-// 	return (
-// 		<div className="list-group">
-// 			{React.Children.map(children, (child) => {
-// 				return child;
-// 			})}
-// 		</div>
-// 	);
-// };
-
-// Card.ListGroup.Item = (props) => {
-// 	const { children } = props;
-// 	return (
-// 		<div className="list-group-item">
-// 			{React.Children.map(children, (child) => {
-// 				return child;
-// 			})}
-// 		</div>
-// 	);
-// };
 
 export default Card;

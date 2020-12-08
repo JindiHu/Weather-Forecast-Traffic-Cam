@@ -6,4 +6,5 @@ export const SET_APP_WIDTH = 'SET_APP_WIDTH';
 export const SET_ONLINE = 'SET_ONLINE';
 export const SET_OFFLINE = 'SET_OFFLINE';
 
+export const SET_LOCATIONS = 'SET_LOCATIONS';
 export const SET_TRAFFIC_IMAGES = 'SET_TRAFFIC_IMAGES';
