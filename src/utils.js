@@ -34,6 +34,8 @@ export const getWeatherIconPath = (weather) => {
 		{ weather: 'cloudy', icon: 'cloudy.svg' },
 		{ weather: 'thundery showers', icon: 'storm.svg' },
 		{ weather: 'showers', icon: 'shower-rain.svg' },
+		{ weather: 'light rain', icon: 'light-rain.svg' },
+		{ weather: 'rain', icon: 'rain.svg' },
 		{ weather: 'sunny', icon: 'sunny.svg' }
 	];
 	for (let i = 0; i < weatherIconDic.length; i++) {
