@@ -6,11 +6,17 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 }
 
-#app>.container{
+#app .react-datepicker [class^='react-datepicker'][class$='selected'],
+#app .react-datepicker [class^='react-datepicker'][class$='today'] {
+	background-color: #007bff !important;
+}
+
+#app > .container {
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
 }
+
 #app.mobile .form-control:focus {
 	border-color: #ced4da;
 	box-shadow: none;

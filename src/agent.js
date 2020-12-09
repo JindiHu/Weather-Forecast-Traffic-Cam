@@ -6,15 +6,34 @@ const axiosInstance = axios.create({
 });
 
 const TrafficImages = {
-	getByDateTime: axiosInstance.get(config.apiEndpoints.url.trafficImages)
+	getCameras: (datatime) =>
+		axiosInstance.get(config.apiEndpoints.url.trafficImages, {
+			params: {
+				date_time: datatime
+			}
+		})
 };
 
 const WeatherForecast = {
-	getTwoHour: axiosInstance.get(config.apiEndpoints.url.weatherForecast.twoHour),
-	getTwentyFourHour: axiosInstance.get(config.apiEndpoints.url.weatherForecast.twentyFourHour),
-	getFourDay: axiosInstance.get(config.apiEndpoints.url.weatherForecast.fourDay)
+	getTwoHour: (datatime) =>
+		axiosInstance.get(config.apiEndpoints.url.weatherForecast.twoHour, {
+			params: {
+				date_time: datatime
+			}
+		}),
+	getTwentyFourHour: (datatime) =>
+		axiosInstance.get(config.apiEndpoints.url.weatherForecast.twentyFourHour, {
+			params: {
+				date_time: datatime
+			}
+		}),
+	getFourDay: (datatime) =>
+		axiosInstance.get(config.apiEndpoints.url.weatherForecast.fourDay, {
+			params: {
+				date_time: datatime
+			}
+		})
 };
-
 
 const agent = { TrafficImages, WeatherForecast };
 
