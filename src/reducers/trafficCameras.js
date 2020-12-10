@@ -1,4 +1,4 @@
-import { SET_TRAFFIC_CAMERAS, CLEAR_TRAFFIC_CAMERAS, SHOW_CAMERAS, HIDE_CAMERAS } from '../constants/ActionTypes';
+import { SET_TRAFFIC_CAMERAS, CLEAR_TRAFFIC_CAMERAS } from '../constants/ActionTypes';
 const initialState = {
 	showCameras: false,
 	cameras: []
