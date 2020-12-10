@@ -48,7 +48,7 @@ const TwentyFourHourForecast = ({
 				<React.Fragment>
 					{general && Object.keys(general).length > 0 ? (
 						<div className="d-flex">
-							<div className="flex-grow-1 d-flex">
+							<div className="flex-grow-1 d-flex pr-2">
 								<div className="flex-grow-1">
 									<h5>24-hour Forecast</h5>
 									{general?.forecast} over many areas
