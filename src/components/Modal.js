@@ -23,7 +23,7 @@ const Modal = ({ onClose, title, body, footer }) => {
 					</div>
 				</div>
 			</div>
-			<div className="modal-backdrop fade show"></div>
+			<div className="modal-backdrop show"></div>
 		</React.Fragment>
 	);
 };
