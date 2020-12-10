@@ -5,6 +5,9 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
+body.no-scroll {
+	overflow: hidden;
+}
 
 #app .react-datepicker [class^='react-datepicker'][class$='selected'],
 #app .react-datepicker .react-datepicker__day--selected {
