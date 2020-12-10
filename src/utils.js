@@ -4,28 +4,6 @@ export const isTouchDevice = () => {
 	return 'ontouchstart' in window || navigator.MaxTouchPoints > 0 || navigator.msMaxTouchPoints > 0;
 };
 
-export const datetimeFormatter = (datetime) => {
-	const pad = (number) => {
-		if (number < 10) {
-			return '0' + number;
-		}
-		return number;
-	};
-	return (
-		datetime.getFullYear() +
-		'-' +
-		pad(datetime.getMonth() + 1) +
-		'-' +
-		pad(datetime.getDate()) +
-		'T' +
-		pad(datetime.getHours()) +
-		':' +
-		pad(datetime.getMinutes()) +
-		':' +
-		pad(datetime.getSeconds())
-	);
-};
-
 export const getWeatherIconPath = (weather) => {
 	weather = weather.toLowerCase();
 	const iconPath = '/img/';

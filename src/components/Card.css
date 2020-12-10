@@ -1,0 +1,4 @@
+.card.hovered {
+    background-color: #5fc2d01a !important;
+    cursor: pointer;
+}

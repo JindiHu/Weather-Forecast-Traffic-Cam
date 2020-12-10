@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import DatePicker from 'react-datepicker';
 import { SET_SELECTED_DATE, SET_SELECTED_TIME } from '../constants/ActionTypes';

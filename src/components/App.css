@@ -7,8 +7,13 @@ body {
 }
 
 #app .react-datepicker [class^='react-datepicker'][class$='selected'],
-#app .react-datepicker [class^='react-datepicker'][class$='today'] {
+#app .react-datepicker .react-datepicker__day--selected {
 	background-color: #007bff !important;
+}
+
+#app button {
+	outline: none;
+	box-shadow: none;
 }
 
 #app > .container {
