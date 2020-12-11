@@ -26,5 +26,6 @@ Your app is ready to be deployed!
 
 
 ### `serve -s build`
-To run production bundles. 
-Make sure run Command Prompt as administrator
+To run production bundles.\
+Make sure run Command Prompt as administrator.\
+Open http://localhost:5000 to view it in the browser.
