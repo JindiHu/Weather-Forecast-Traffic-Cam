@@ -8,13 +8,16 @@ export const getWeatherIconPath = (weather) => {
 	weather = weather.toLowerCase();
 	const iconPath = '/img/';
 	const weatherIconDic = [
+		{ weather: 'fair', icon: 'sunny.svg' },
 		{ weather: 'partly cloudy', icon: 'partly-cloudy.svg' },
 		{ weather: 'cloudy', icon: 'cloudy.svg' },
 		{ weather: 'thundery showers', icon: 'storm.svg' },
 		{ weather: 'showers', icon: 'shower-rain.svg' },
 		{ weather: 'light rain', icon: 'light-rain.svg' },
 		{ weather: 'rain', icon: 'rain.svg' },
-		{ weather: 'sunny', icon: 'sunny.svg' }
+		{ weather: 'hazy', icon: 'hazy.svg' },
+		{ weather: 'mist', icon: 'mist.svg' },
+		{ weather: 'windy', icon: 'windy.svg' }
 	];
 	for (let i = 0; i < weatherIconDic.length; i++) {
 		if (weather.match(`${weatherIconDic[i].weather}`)) {
