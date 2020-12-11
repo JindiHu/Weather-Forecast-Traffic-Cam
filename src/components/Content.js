@@ -6,6 +6,7 @@ import TrafficCameras from './TrafficCameras';
 import contentRoutes from '../routes/content';
 
 const Content = ({
+	appState: { isMobile },
 	routerState: {
 		location: { pathname }
 	}
@@ -21,7 +22,7 @@ const Content = ({
 								className={'nav-link' + (matchPath(pathname, route) ? ' active' : '')}
 								to={route.path}
 							>
-								{route.name}
+								{isMobile ? route.shortName : route.name}
 							</Link>
 						</li>
 					);
@@ -40,8 +41,8 @@ const Content = ({
 };
 
 const mapStateToProps = (state) => ({
-	routerState: state.router,
-	trafficCamerasState: state.trafficCameras
+	appState: state.app,
+	routerState: state.router
 });
 
 export default connect(mapStateToProps)(Content);

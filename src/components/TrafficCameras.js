@@ -5,7 +5,6 @@ import Modal from './Modal';
 import FlatList from './FlatList';
 
 const TrafficCameras = ({ dispatch, appState: { isMobile }, trafficCamerasState: { showCameras, cameras } }) => {
-	console.log(isMobile);
 	return (
 		<React.Fragment>
 			{showCameras && (
@@ -25,9 +24,9 @@ const TrafficCameras = ({ dispatch, appState: { isMobile }, trafficCamerasState:
 										return (
 											<React.Fragment>
 												{isMobile ? (
-													<img className="mt-3" src={item.image} width={'100%'} />
+													<img className="mt-3" src={item.image} width={'100%'} alt="camera"/>
 												) : (
-													<img className="mt-3 mx-2" src={item.image} height={220} />
+													<img className="mt-3 mx-2" src={item.image} height={220}  alt="camera"/>
 												)}
 											</React.Fragment>
 										);
