@@ -49,6 +49,11 @@ const App = (props) => {
 	if (props.appState.isTouch) {
 		classNames.push('touch');
 	}
+	if (props.appState.noScroll) {
+		document.body.classList.add('no-scroll');
+	} else {
+		document.body.classList.remove('no-scroll');
+	}
 
 	return (
 		<div id="app" className={classNames.join(' ')}>

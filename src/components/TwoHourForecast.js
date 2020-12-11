@@ -5,7 +5,7 @@ import FlatList from './FlatList';
 import Card from './Card';
 import Spinner from './Spinner';
 import agent from '../agent';
-import { SET_TWO_HOUR, SET_TRAFFIC_CAMERAS } from '../constants/ActionTypes';
+import { SET_TWO_HOUR, SET_TRAFFIC_CAMERAS, SET_BODY_NO_SCROLL } from '../constants/ActionTypes';
 import { getDistance, getWeatherIconPath } from '../utils';
 
 const getLocations = (trafficImages, twoHourForecast) => {
@@ -98,6 +98,8 @@ const TwoHourForecast = ({ dispatch, forecastsState: { twoHour }, filtersState: 
 													type: SET_TRAFFIC_CAMERAS,
 													payload: { cameras: item.cameras || [] }
 												});
+
+												dispatch({ type: SET_BODY_NO_SCROLL });
 											}}
 										>
 											<Card.Body>

@@ -5,6 +5,8 @@ export const EXIT_TOUCH_MODE = 'EXIT_TOUCH_MODE';
 export const SET_APP_WIDTH = 'SET_APP_WIDTH';
 export const SET_ONLINE = 'SET_ONLINE';
 export const SET_OFFLINE = 'SET_OFFLINE';
+export const SET_BODY_NO_SCROLL = 'SET_BODY_NO_SCROLL';
+export const SET_BODY_SCROLL = 'SET_BODY_SCROLL';
 
 export const SET_TWO_HOUR = 'SET_TWO_HOUR';
 export const SET_TWENTY_FOUR_HOUR = 'SET_TWENTY_FOUR_HOUR';

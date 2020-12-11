@@ -1,29 +1,35 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { CLEAR_TRAFFIC_CAMERAS } from '../constants/ActionTypes';
+import { CLEAR_TRAFFIC_CAMERAS, SET_BODY_SCROLL } from '../constants/ActionTypes';
 import Modal from './Modal';
 import FlatList from './FlatList';
 
-const TrafficCameras = ({ dispatch, trafficCamerasState: { showCameras, cameras } }) => {
+const TrafficCameras = ({ dispatch, appState: { isMobile }, trafficCamerasState: { showCameras, cameras } }) => {
+	console.log(isMobile);
 	return (
 		<React.Fragment>
 			{showCameras && (
 				<Modal
 					onClose={() => {
 						dispatch({ type: CLEAR_TRAFFIC_CAMERAS });
+						dispatch({ type: SET_BODY_SCROLL });
 					}}
 					title={'Cameras'}
 					body={
 						<React.Fragment>
 							{cameras.length > 0 ? (
 								<FlatList
-									className="form-row"
+									className="d-flex flex-wrap justify-content-center mt-n3"
 									data={cameras}
 									renderItem={({ item }) => {
 										return (
-											<div className="col-md-6">
-												<img src={item.image} width={'100%'} />
-											</div>
+											<React.Fragment>
+												{isMobile ? (
+													<img className="mt-3" src={item.image} width={'100%'} />
+												) : (
+													<img className="mt-3 mx-2" src={item.image} height={200} />
+												)}
+											</React.Fragment>
 										);
 									}}
 									keyExtractor={(item) => item.camera_id}
@@ -43,6 +49,7 @@ const TrafficCameras = ({ dispatch, trafficCamerasState: { showCameras, cameras 
 };
 
 const mapStateToProps = (state) => ({
+	appState: state.app,
 	trafficCamerasState: state.trafficCameras
 });
 
