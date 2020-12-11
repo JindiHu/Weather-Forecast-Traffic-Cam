@@ -27,7 +27,7 @@ const TrafficCameras = ({ dispatch, appState: { isMobile }, trafficCamerasState:
 												{isMobile ? (
 													<img className="mt-3" src={item.image} width={'100%'} />
 												) : (
-													<img className="mt-3 mx-2" src={item.image} height={200} />
+													<img className="mt-3 mx-2" src={item.image} height={220} />
 												)}
 											</React.Fragment>
 										);

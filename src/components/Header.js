@@ -5,7 +5,7 @@ const Header = (props) => {
 	return (
 		<nav className="navbar navbar-expand-lg">
 			<Link className="navbar-brand" to="/">
-				Logo Here
+				<img src="/logo_govtech_hort.gif" height={80} />
 			</Link>
 		</nav>
 	);
