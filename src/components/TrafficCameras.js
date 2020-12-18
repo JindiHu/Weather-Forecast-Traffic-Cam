@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { CLEAR_TRAFFIC_CAMERAS, SET_BODY_SCROLL } from '../constants/ActionTypes';
+import Image from './Image';
 import Modal from './Modal';
 import FlatList from './FlatList';
 
@@ -26,7 +27,8 @@ const TrafficCameras = ({ dispatch, appState: { isMobile }, trafficCamerasState:
 												{isMobile ? (
 													<img className="mt-3" src={item.image} width={'100%'} alt="camera"/>
 												) : (
-													<img className="mt-3 mx-2" src={item.image} height={220}  alt="camera"/>
+													<Image className="mt-3 mx-2" src={item.image} height={220}  alt="camera"/>
+													// <img className="mt-3 mx-2" src={item.image} height={220}  alt="camera"/>
 												)}
 											</React.Fragment>
 										);

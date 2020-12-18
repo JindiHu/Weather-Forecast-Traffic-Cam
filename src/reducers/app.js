@@ -37,7 +37,6 @@ const app = (state = initialState, action) => {
 		case SET_OFFLINE:
 			return { ...state, isOnline: false };
 		case SET_BODY_NO_SCROLL:
-			console.log('no scroll')
 			return { ...state, noScroll: true };
 		case SET_BODY_SCROLL:
 			return { ...state, noScroll: false };
